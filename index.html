@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./icons/favicons/.png"
+      href="./icons/favicons/favicon.ico"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/all.min.css" />
@@ -21,7 +21,7 @@
   </head>
   <body>
     <nav class="navbar w-full p-fixed bg-white">
-      <div class="container between-flex p-15">
+      <div class="container between-flex p-5">
         <h1 class="navbar__logo">NIFIR</h1>
         <form class="navbar-form f-g-1 txt-c" action="">
           <div class="navbar-search-wrapper p-relative">
@@ -43,12 +43,78 @@
         </button>
         <a class="navbar-profile flex-c-c" href="">
           <img
-            class="navbar-profile__image"
+            class="navbar-profile__image pfp"
             src="./images/profile/team-01.png"
             alt=""
           />
         </a>
       </div>
     </nav>
+    <div class="page d-flex gap-20 w-full mt-80 mb-20">
+      <div class="container">
+        <aside class="navList">
+          <div class="user-card rad-10">
+            <img class="user-card__image pfp" src="./images/profile/team-01.png" alt="">
+            <div class="user-card-info">
+              <p class="user-card-info__name">Ahmed Mohammed</p>
+              <p class="user-card-info__username">@AhMo5</p>
+            </div>
+          </div>
+          <ul class="navLinks mt-20 rad-10 of-hidden">
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white active" href="">
+                <i class="fa-solid fa-home mr-20"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-compass mr-20"></i>
+                Explore
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-bell mr-20"></i>
+                Notifications
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-envelope mr-20"></i>
+                Messages
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-bookmark mr-20"></i>
+                Bookmarks
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-chart-simple mr-20"></i>
+                Analytics
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-palette mr-20"></i>
+                Theme
+              </a>
+            </li>
+            <li>
+              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
+                <i class="fa-solid fa-cog mr-20"></i>
+                Settings
+              </a>
+            </li>
+          </ul>
+          <button class="navList__create -block w-full mt-20 pt-20 pb-20 rad-50">Create Post</button>
+        </aside>
+        <main></main>
+        <aside></aside>
+      </div>
+    </div>
   </body>
 </html>

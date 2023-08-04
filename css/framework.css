@@ -52,6 +52,10 @@
   height: fit-content;
 }
 
+.of-hidden {
+  overflow: hidden;
+}
+
 @media (max-width: 767px) {
   .hide-mobile {
     display: none;
@@ -211,6 +215,9 @@
 .mt-40 {
   margin-top: 40px;
 }
+.mt-80 {
+  margin-top: 80px;
+}
 
 .mr-5 {
   margin-right: 5px;
@@ -266,6 +273,9 @@
 }
 .rad-10 {
   border-radius: 10px;
+}
+.rad-50 {
+  border-radius: 50px;
 }
 .rad-half {
   border-radius: 50%;
@@ -353,6 +363,32 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+.pfp {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.user-card {
+  padding: 16px;
+  background-color: var(--light-widget);
+  display: flex;
+  align-items: center;
+}
+
+.user-card-info {
+  margin-left: 10px;
+}
+
+.user-card-info__name {
+  font-weight: bold;
+}
+
+.user-card-info__username {
+  color: grey;
+  margin-top: 5px;
 }
 
 /* End Components */
