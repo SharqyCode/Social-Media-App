@@ -205,6 +205,30 @@ body {
   
 } 
 
+.navLinks .navLink .navLink__icon.bell::after, 
+.navLinks .navLink .navLink__icon.msgs::after {
+  
+  font-size: 8px;
+  color: var(--dark-font);
+  position: absolute;
+  display: grid;
+  place-items: center;
+  padding: 1px;
+  top: -14px;
+  right: -10px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+}
+
+.navLinks .navLink .navLink__icon.bell::after {
+  content: "+99";
+}
+.navLinks .navLink .navLink__icon.msgs::after {
+  content: "4";
+}
+
 .navList__create {
   background-color: var(--color-purple);
   color: var(--dark-font);
@@ -233,6 +257,7 @@ body {
   }
   .navLinks .navLink__icon {
    margin: 0px;
+   font-size: 16px;
   }
   .navLinks .navLink:hover .navLink__icon  {
   margin-left: 0px;
