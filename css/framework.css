@@ -372,9 +372,11 @@
 }
 
 .user-card {
-  padding: 16px;
+  height: 64px;
+  padding-left: 10px;
   background-color: var(--light-widget);
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
 }
 

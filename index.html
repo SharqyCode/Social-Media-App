@@ -52,65 +52,69 @@
     </nav>
     <div class="page d-flex gap-20 w-full mt-80 mb-20">
       <div class="container">
-        <aside class="navList">
-          <div class="user-card rad-10">
-            <img class="user-card__image pfp" src="./images/profile/team-01.png" alt="">
-            <div class="user-card-info">
-              <p class="user-card-info__name">Ahmed Mohammed</p>
-              <p class="user-card-info__username">@AhMo5</p>
-            </div>
-          </div>
+        <aside class="navList p-fixed">
+
+            <a class="user-card rad-10">
+              <img class="user-card__image pfp" src="./images/profile/team-01.png" alt="">
+              <div class="user-card-info">
+                <p class="user-card-info__name">Ahmed Mohammed</p>
+                <p class="user-card-info__username">@AhMo5</p>
+              </div>
+            </a>
           <ul class="navLinks mt-20 rad-10 of-hidden">
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white active" href="">
-                <i class="fa-solid fa-home mr-20"></i>
-                Home
+              <a class="navLink d-flex align-center bg-white active" href="">
+                <i class="navLink__icon fa-solid fa-home ml-20"></i>
+                <span class="navLink__title ml-20">Home</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-compass mr-20"></i>
-                Explore
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-compass ml-20"></i>
+                <span class="navLink__title ml-20">Explore</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-bell mr-20"></i>
-                Notifications
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-bell ml-20 bell p-relative"></i>
+                <span class="navLink__title ml-20">Notifications</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-envelope mr-20"></i>
-                Messages
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-envelope ml-20 msgs p-relative"></i>
+                <span class="navLink__title ml-20">Messages</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-bookmark mr-20"></i>
-                Bookmarks
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-bookmark ml-20"></i>
+                <span class="navLink__title ml-20">Bookmarks</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-chart-simple mr-20"></i>
-                Analytics
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-chart-simple ml-20"></i>
+                <span class="navLink__title ml-20">Analytics</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-palette mr-20"></i>
-                Theme
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-palette ml-20"></i>
+                <span class="navLink__title ml-20">Theme</span>
               </a>
             </li>
             <li>
-              <a class="d-flex d-block pt-20 pb-20 pl-40 bg-white" href="">
-                <i class="fa-solid fa-cog mr-20"></i>
-                Settings
+              <a class="navLink d-flex align-center bg-white" href="">
+                <i class="navLink__icon fa-solid fa-cog ml-20"></i>
+                <span class="navLink__title ml-20">Settings</span>
               </a>
             </li>
           </ul>
           <button class="navList__create -block w-full mt-20 pt-20 pb-20 rad-50">Create Post</button>
+          <button class="navbar__create_mobile p-relative">
+            <i class="fa-solid fa-plus"></i>
+          </button>
         </aside>
         <main></main>
         <aside></aside>
