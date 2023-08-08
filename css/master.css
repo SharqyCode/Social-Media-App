@@ -168,6 +168,7 @@ body {
 .open-navList {
   z-index: 10;
   display: none;
+  left: 0px;
 } 
 .navList {
   width: 250px;
@@ -356,6 +357,31 @@ body {
   top: 20px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.post-form {
+  background-color: var(--light-widget);
+  padding: 5px 15px;
+  border-radius: 40px;
+}
+
+.post-pfp {
+  width: 30px;
+}
+
+.post-input {
+  flex-grow: 1;
+  padding: 5px;
+  margin: 0px 10px;
+}
+
+.post-btn {
+  display: block;
+  background-color: var(--color-purple);
+  color: var(--dark-font);
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 40px;
 }
 
 @media (max-width: 992px) {
