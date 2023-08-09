@@ -14,6 +14,7 @@
   --color-green: hsl(120, 95%, 65%);
   --color-blue:hsl(202,75%,60%);
   --color-grey: hsl(252, 15%, 65%);
+  --aside-width: 280px;
 }
 /* End Variables */
 
@@ -48,35 +49,17 @@ body {
 }
 
 .container {
-  width: 1320px;
+  width: 80%;
   margin: 0px auto;
 }
 
-@media (max-width: 1400px) {
-  .container {
-    width: 1140px;
-  }
-}
 @media (max-width: 1200px) {
   .container {
-    width: 960px;
+    width: 96%;
   }
 }
-@media (max-width: 992px) {
-  .container {
-    width: 720px;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    width: 540px;
-  }
-}
+
 @media (max-width: 576px) {
-  .container {
-    width: calc(100% - 20px);
-    
-  }
   html {
     font-size: 14px;
   }
@@ -164,6 +147,19 @@ body {
 }
 /* End Navbar */
 
+.page .container {
+  display: grid;
+  grid-template-columns: 18vw auto 20vw;
+  column-gap: 1.25rem;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .page .container {
+    grid-template-columns: 10vw auto 30vw;
+  }
+}
+
 /* Start navList */
 
 .open-navList {
@@ -171,8 +167,10 @@ body {
   display: none;
   left: 0px;
 } 
+
 .navList {
-  width: 250px;
+      height: max-content;
+      top: 80px;
 }
 
 .navList .close-navList {
@@ -264,7 +262,7 @@ body {
   }
   .navList {
     width: 64px;
-    display: none;
+    visibility:hidden;
   }
   .user-card {
     justify-content: center;
@@ -272,7 +270,7 @@ body {
 
   }
   .user-card-info {
-    display: none;
+    visibility: hidden;
   }
   .navLinks .navLink {
     align-items: center;
@@ -312,8 +310,8 @@ body {
 /* Start feed */
 .feed {
   /* background-color: var(--light-widget); */
-  margin: 20px 270px;
-  width: 1fr;
+  /* margin: 20px 0px 20px calc(var(--aside-width) + 20px); */
+  /* width: 1fr; */
 }
 
 .stories {
@@ -462,3 +460,11 @@ body {
 
 /* End posts */
 /* End feed */
+
+/* Start messages */
+.msgs-widget {
+  background-color: var(--light-widget);
+  /* width: var(--aside-width); */
+}
+
+/* End messages */

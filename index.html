@@ -51,9 +51,9 @@
       </div>
     </nav>
     <div class="page w-full mt-80 mb-20">
-      <div class="container p-relative">
+      <div class="container p-relative d-flex gap-20">
         <i class="open-navList fa-solid fa-bars d-block bg-white p-10 w-fit rad-6 p-fixed"></i>
-        <aside class="navList p-fixed">
+        <aside class="navList p-sticky">
           <i class="close-navList fa-solid fa-x bg-white rad-6 d-block p-absolute"></i>
             <a class="user-card rad-10">
               <img class="user-card__image pfp" src="./images/profile/team-01.png" alt="">
@@ -251,7 +251,17 @@
             </div>
           </section>
         </main>
-        <aside></aside>
+        <aside class="msgs-and-requests">
+          <section class="msgs-widget p-15">
+            <div class="msgs-header between-flex">
+              <h2 class="msgs-header__title fs-16">Messages</h2>
+              <i class="msgs-header__icon fa-regular fa-pen-to-square"></i>
+            </div>
+            <form class="msgs-form" action="">
+              <input class="msgs-form__search mt-20 w-full" type="search" name="" id="" placeholder="Search Messages">
+            </form>
+          </section>
+        </aside>
       </div>
     </div>
   </body>
