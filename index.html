@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="./css/master.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Nifir</title>
   </head>
   <body>
@@ -120,7 +117,7 @@
           </button>
         </aside>
         <main class="feed rad-10 ">
-          <section class="stories d-flex gap-10">
+          <section class="stories d-flex">
             <div class="stories-card p-relative">
               <!-- <img class="stories-card__content" src="" alt=""> -->
               <img class="stories-card__profile pfp p-absolute" src="./images/Avatars/avatar-02.png" alt="">
@@ -153,7 +150,7 @@
           </form>
           <section class="posts">
             <div class="post p-15 mt-20 mb-20">
-              <div class="post-header d-flex">
+              <div class="post-header d-flex align-center">
                 <img class="post-header__pfp pfp" src="./images/Avatars/avatar-02.png" alt="">
                 <div class="post-header-info f-g-1 ml-10">
                   <p class="post-header-info__name">Georgina Campbell</p>
@@ -186,7 +183,7 @@
               <div class="post-comments mt-5 fs-14">View all <span class="post-comments__num">255</span> comments</div>
             </div>
             <div class="post p-15 mt-20 mb-20">
-              <div class="post-header d-flex">
+              <div class="post-header d-flex align-center">
                 <img class="post-header__pfp pfp" src="./images/Avatars/avatar-03.png" alt="">
                 <div class="post-header-info f-g-1 ml-10">
                   <p class="post-header-info__name">Chris Brock</p>
@@ -219,7 +216,7 @@
               <div class="post-comments mt-5 fs-14">View all <span class="post-comments__num">98</span> comments</div>
             </div>
             <div class="post p-15 mt-20 mb-20">
-              <div class="post-header d-flex">
+              <div class="post-header d-flex align-center">
                 <img class="post-header__pfp pfp" src="./images/Avatars/avatar-04.png" alt="">
                 <div class="post-header-info f-g-1 ml-10">
                   <p class="post-header-info__name">Aiden Mann</p>
@@ -257,26 +254,74 @@
           <section class="msgs-widget p-15 rad-20">
             <div class="msgs-header between-flex">
               <h2 class="msgs-header__title fs-16">Messages</h2>
-              <i class="msgs-header__icon fa-regular fa-pen-to-square"></i>
+              <i class="msgs-header__icon fa-regular fa-pen-to-square fs-18"></i>
             </div>
-            <form class="msgs-form" action="">
-              <input class="msgs-form__search mt-20 w-full" type="search" name="" id="" placeholder="Search Messages">
+            <form class="msgs-form p-relative mt-20" action="">
+              <i class="msgs-form__icon fa-solid fa-magnifying-glass p-absolute"></i>
+              <input class="msgs-form__search w-full" type="search" name="" id="" placeholder="Search Messages">
             </form>
-            <ul class="msgs-types d-flex w-full fs-14">
-              <li class="msgs-type" data-index="1">Primary</li>
-              <li class="msgs-type" data-index="2">General</li>
-              <li class="msgs-type" data-index="3">Requests</li>
+            <ul class="msgs-types d-flex w-full">
+              <li class="msgs-type primary active" data-index="1">Primary</li>
+              <li class="msgs-type general" data-index="2">General</li>
+              <li class="msgs-type request" data-index="3" data-request="2">Requests</li>
             </ul>
-            <ul class="msgs-contacts mt-20">
+            <ul class="msgs-contacts mt-20 d-flex f-col gap-20">
               <li class="contact d-flex">
                 <img class="conatct__pfp pfp" src="./images/Avatars/avatar-02.png" alt="">
                 <div class="contact__active"></div>
                 <div class="contact-info f-g-1 ml-10">
                   <h3 class="contact-info__name fs-14">Andy Thompson</h3>
-                  <h3 class="contact-info__lm c-grey fs-12 mt-50">Just do it Bruh</h3>
+                  <p class="contact-info__lm fs-12 mt-50">Just do it Bruh</p>
+                </div>
+              </li>
+              <li class="contact d-flex">
+                <img class="conatct__pfp pfp" src="./images/Avatars/avatar-03.png" alt="">
+                <div class="contact__active"></div>
+                <div class="contact-info f-g-1 ml-10">
+                  <h3 class="contact-info__name fs-14">Jacob Blaz</h3>
+                  <p class="contact-info__lm fs-12 mt-50">Received, thanks!</p>
+                </div>
+              </li>
+              <li class="contact d-flex">
+                <img class="conatct__pfp pfp" src="./images/Avatars/avatar-04.png" alt="">
+                <div class="contact__active"></div>
+                <div class="contact-info f-g-1 ml-10">
+                  <h3 class="contact-info__name fs-14">Sam Dof</h3>
+                  <p class="contact-info__notif fs-12 mt-50"><span class="msgs-num">2</span> new messages</p>
                 </div>
               </li>
             </ul>
+          </section>
+          <section class="msgs-requests mt-20 mb-20">
+            <h2 class="requests-header fs-16 ml-20 mb-20">Requests</h2>
+            <ul class="requests-contacts d-flex f-col gap-20">
+              <li class="requests-contact rad-20">
+                <div class="contact-img-and-info d-flex">
+                  <img class="requests-contact__pfp pfp" src="./images/Avatars/avatar-02.png" alt="">
+                  <div class="requests-contact-info f-g-1 ml-10">
+                    <h3 class="requests-contact-info__name fs-14">Mendy Johnson</h3>
+                    <p class="requests-contact-info__mutual"><span class="mutual-num">8</span> Mutual Friends</p>
+                  </div>
+                </div>
+                  <div class="requests-contact__actions d-flex gap-20 justify-center mt-10">
+                    <button class="rad-50 accept">Accept</button>
+                    <button class="rad-50">Decline</button>
+                  </div>
+              </li>
+              <li class="requests-contact rad-20">
+                <div class="contact-img-and-info d-flex">
+                  <img class="requests-contact__pfp pfp" src="./images/Avatars/avatar-03.png" alt="">
+                  <div class="requests-contact-info f-g-1 ml-10">
+                    <h3 class="requests-contact-info__name fs-14">Randy Mosh</h3>
+                    <p class="requests-contact-info__mutual"><span class="mutual-num">2</span> Mutual Friends</p>
+                  </div>
+                </div>
+                  <div class="requests-contact__actions d-flex gap-20 justify-center mt-10">
+                    <button class="rad-50 accept">Accept</button>
+                    <button class="rad-50">Decline</button>
+                  </div>
+              </li>
+            </div>
           </section>
         </aside>
       </div>

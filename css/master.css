@@ -29,6 +29,8 @@
   color: black;
   -webkit-box-sizing: border-box;
   list-style: none;
+  color: var(--light-font);
+  font-family: "Poppins",sans-serif;
 }
 
 button {
@@ -43,9 +45,8 @@ input {
 
 
 body {
-  font-family: "Open Sans",sans-serif;
+  
   background-color: var(--light-bg);
-  color: var(--light-font);
 }
 
 .container {
@@ -149,15 +150,10 @@ body {
 .page .container {
   display: grid;
   grid-template-columns: 18vw auto 20vw;
-  column-gap: 2rem;
+  column-gap: 1.25rem;
   position: relative;
 }
 
-/* @media (max-width: 1200px) {
-  .page .container {
-    grid-template-columns: 10vw auto 30vw;
-  }
-} */
 
 /* Start navList */
 
@@ -220,7 +216,6 @@ body {
 .navLinks .navLink.active .navLink__icon {
   color: var(--color-purple);
   margin-left: 40px;
-  
 } 
 
 .navLinks .navLink .navLink__icon.bell::after, 
@@ -254,7 +249,7 @@ body {
   font-size: 1rem;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .open-navList {
     display: block;
   }
@@ -302,13 +297,13 @@ body {
   .navbar__create_mobile i {
     color: var(--dark-font);
   }
-}
+} */
 /* End navList */
 
 /* Start feed */
 
 .stories {
-  height: 12rem;
+  aspect-ratio: 521 / 180;
   overflow-x: scroll;
   gap: 8px;
 }
@@ -319,8 +314,8 @@ body {
 
 .stories-card {
   /* max-width: 100px; */
-  /* aspect-ratio: 9/16; */
-  width: 100%;
+  aspect-ratio: 9/16;
+  /* width: 100%; */
   border-radius: 14px;
   cursor: pointer;
 }
@@ -361,6 +356,10 @@ body {
   background-color: var(--light-widget);
   padding: 5px 15px;
   border-radius: 40px;
+}
+
+.post-header__pfp {
+  height: 40px;
 }
 
 .post-pfp {
@@ -462,6 +461,77 @@ body {
 }
 
 .msgs-form__search {
+  background-color: var(--light-bg);
+  height: 50px;
+  border-radius: 40px;
+  padding: 0px 20px 0px 40px;
+}
+
+.msgs-form__icon {
+  left: 20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
 }
+
+.msgs-types .msgs-type {
+  font-size: 13px;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0px;
+  margin-top: 10px;
+  border-bottom: 4px solid var(--light-bg);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.msgs-types .msgs-type.request {
+  color: var(--color-purple);
+}
+
+.msgs-types .msgs-type.request::after {
+  content: " (" attr(data-request) ")";
+}
+
+.msgs-types .msgs-type.active {
+  border-bottom-color: var(--light-font);
+}
+
+.contact-info__lm {
+  color: var(--color-grey);
+}
+.contact-info__notif {
+  font-weight: bold;
+}
+
 /* End messages */
+
+/* Start requests */
+.requests-header {
+  color: var(--color-grey);
+}
+
+.requests-contact {
+  background-color: var(--light-widget);
+  padding: 15px;
+}
+
+.requests-contact__pfp {
+  height: 40px;
+}
+
+.requests-contact-info__mutual,  .requests-contact-info__mutual span{
+  font-weight: 300;
+  color: var(--color-grey);
+}
+
+.requests-contact__actions button {
+  padding: 10px 20px;
+}
+
+.requests-contact__actions .accept {
+  background-color: var(--color-purple);
+  color: var(--dark-font);
+}
+/* End requests */
