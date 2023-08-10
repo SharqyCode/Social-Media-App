@@ -79,12 +79,11 @@ body {
 }
 
 .navbar-search-wrapper {
-  width: 50%;
-  margin: 0px auto;
 }
 
 .navbar-form__search {
   height: 40px;
+  width: 30vw;
   padding: 0px 15px 0px 40px;
   border-radius: 50px;
   outline: none;
@@ -150,15 +149,15 @@ body {
 .page .container {
   display: grid;
   grid-template-columns: 18vw auto 20vw;
-  column-gap: 1.25rem;
+  column-gap: 2rem;
   position: relative;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .page .container {
     grid-template-columns: 10vw auto 30vw;
   }
-}
+} */
 
 /* Start navList */
 
@@ -188,7 +187,6 @@ body {
 
 .navList .user-card {
   height: 64px;
-  border-top-right-radius: 0px;
 }
 
 .navLinks .navLink {
@@ -308,15 +306,11 @@ body {
 /* End navList */
 
 /* Start feed */
-.feed {
-  /* background-color: var(--light-widget); */
-  /* margin: 20px 0px 20px calc(var(--aside-width) + 20px); */
-  /* width: 1fr; */
-}
 
 .stories {
-  height: 200px;
+  height: 12rem;
   overflow-x: scroll;
+  gap: 8px;
 }
 
 .stories::-webkit-scrollbar {
@@ -325,7 +319,8 @@ body {
 
 .stories-card {
   /* max-width: 100px; */
-  aspect-ratio: 9/16;
+  /* aspect-ratio: 9/16; */
+  width: 100%;
   border-radius: 14px;
   cursor: pointer;
 }
@@ -464,7 +459,9 @@ body {
 /* Start messages */
 .msgs-widget {
   background-color: var(--light-widget);
-  /* width: var(--aside-width); */
 }
 
+.msgs-form__search {
+
+}
 /* End messages */

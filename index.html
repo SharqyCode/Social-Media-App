@@ -23,7 +23,7 @@
     <nav class="navbar w-full p-fixed bg-white">
       <div class="container between-flex p-5">
         <h1 class="navbar__logo">NIFIR</h1>
-        <form class="navbar-form f-g-1 txt-c" action="">
+        <form class="navbar-form txt-c" action="">
           <div class="navbar-search-wrapper p-relative">
             <i
               class="navbar-form__icon fa-solid fa-magnifying-glass p-absolute"
@@ -37,28 +37,30 @@
             />
           </div>
         </form>
-        <button class="navbar__create p-relative">Create</button>
-        <button class="navbar__create_mobile p-relative">
-          <i class="fa-solid fa-plus"></i>
-        </button>
-        <a class="navbar-profile flex-c-c" href="">
-          <img
-            class="navbar-profile__image pfp"
-            src="./images/profile/team-01.png"
-            alt=""
-          />
-        </a>
+        <div class="navbar-create-profile d-flex">
+          <button class="navbar__create p-relative">Create</button>
+          <button class="navbar__create_mobile p-relative">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <a class="navbar-profile flex-c-c" href="">
+            <img
+              class="navbar-profile__image pfp"
+              src="./images/profile/team-01.png"
+              alt=""
+            />
+          </a>
+        </div>
       </div>
     </nav>
     <div class="page w-full mt-80 mb-20">
       <div class="container p-relative d-flex gap-20">
-        <i class="open-navList fa-solid fa-bars d-block bg-white p-10 w-fit rad-6 p-fixed"></i>
+        <!-- <i class="open-navList fa-solid fa-bars d-block bg-white p-10 w-fit rad-6 p-fixed"></i> -->
         <aside class="navList p-sticky">
           <i class="close-navList fa-solid fa-x bg-white rad-6 d-block p-absolute"></i>
             <a class="user-card rad-10">
               <img class="user-card__image pfp" src="./images/profile/team-01.png" alt="">
               <div class="user-card-info">
-                <p class="user-card-info__name">Ahmed Mohammed</p>
+                <p class="user-card-info__name">Ahmed Bakr</p>
                 <p class="user-card-info__username">@AhMo5</p>
               </div>
             </a>
@@ -252,7 +254,7 @@
           </section>
         </main>
         <aside class="msgs-and-requests">
-          <section class="msgs-widget p-15">
+          <section class="msgs-widget p-15 rad-20">
             <div class="msgs-header between-flex">
               <h2 class="msgs-header__title fs-16">Messages</h2>
               <i class="msgs-header__icon fa-regular fa-pen-to-square"></i>
@@ -260,6 +262,21 @@
             <form class="msgs-form" action="">
               <input class="msgs-form__search mt-20 w-full" type="search" name="" id="" placeholder="Search Messages">
             </form>
+            <ul class="msgs-types d-flex w-full fs-14">
+              <li class="msgs-type" data-index="1">Primary</li>
+              <li class="msgs-type" data-index="2">General</li>
+              <li class="msgs-type" data-index="3">Requests</li>
+            </ul>
+            <ul class="msgs-contacts mt-20">
+              <li class="contact d-flex">
+                <img class="conatct__pfp pfp" src="./images/Avatars/avatar-02.png" alt="">
+                <div class="contact__active"></div>
+                <div class="contact-info f-g-1 ml-10">
+                  <h3 class="contact-info__name fs-14">Andy Thompson</h3>
+                  <h3 class="contact-info__lm c-grey fs-12 mt-50">Just do it Bruh</h3>
+                </div>
+              </li>
+            </ul>
           </section>
         </aside>
       </div>
