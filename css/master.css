@@ -50,6 +50,10 @@ input {
   border: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 body {
   background-color: var(--cur-bg);
 }
@@ -372,11 +376,39 @@ body {
 }
 
 .stories-card {
-  /* max-width: 100px; */
   aspect-ratio: 9/16;
-  /* width: 100%; */
   border-radius: 14px;
   cursor: pointer;
+}
+
+.storyBG {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vw;
+  top: -60px;
+  left: 0;
+}
+
+.storyLarge {
+  width: 350px;
+  aspect-ratio: 9/16;
+  background-color: black;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 170px;
+  border-radius: 20px;
+  
+}
+
+.storyLarge__pfp {
+  position: absolute;
+  top: 20px;
+  left: 20px
 }
 
 .stories-card:nth-child(1) {
