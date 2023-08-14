@@ -15,6 +15,8 @@
   --color-blue:hsl(202,75%,60%);
   --color-grey: hsl(252, 15%, 65%);
   --aside-width: 280px;
+
+  --primary-color: var(--color-purple);
 }
 /* End Variables */
 
@@ -33,9 +35,14 @@
   font-family: "Poppins",sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 input {
@@ -79,9 +86,6 @@ body {
   letter-spacing: 2px;
 }
 
-.navbar-search-wrapper {
-}
-
 .navbar-form__search {
   height: 40px;
   width: 30vw;
@@ -103,7 +107,7 @@ body {
 .navbar__create_mobile {
   height: 40px;
   color: var(--dark-font);
-  background-color: var(--color-purple);
+  background-color: var(--primary-color);
   font-size: 1rem;
   font-weight: 600;
   margin-right: 20px;
@@ -158,12 +162,17 @@ body {
 /* Start navList */
 
 .open-navList {
-  z-index: 10;
-  display: none;
-  left: 0px;
+  margin-left: -10px;
+  background-color: var(--primary-color);
+  color: var(--dark-font);
 } 
 
-.navList {
+.open-nav-block {
+    display: none;
+    z-index: 20;
+  }
+
+.navList, .open-nav-block {
       height: max-content;
       top: 80px;
 }
@@ -206,15 +215,15 @@ body {
 
 .navLinks .navLink.active{
   background-color: transparent;
-  border-left: 8px solid var(--color-purple);
+  border-left: 8px solid var(--primary-color);
   font-weight: bold;
 }
 
 .navLinks .navLink.active .navLink__title {
-  color: var(--color-purple);
+  color: var(--primary-color);
 }
 .navLinks .navLink.active .navLink__icon {
-  color: var(--color-purple);
+  color: var(--primary-color);
   margin-left: 40px;
 } 
 
@@ -243,27 +252,26 @@ body {
 }
 
 .navList__create {
-  background-color: var(--color-purple);
+  background-color: var(--primary-color);
   color: var(--dark-font);
   font-weight: bold;
   font-size: 1rem;
 }
 
-/* @media (max-width: 992px) {
-  .open-navList {
-    display: block;
-  }
-  .navList {
-    width: 64px;
-    visibility:hidden;
-  }
+@media (max-width: 1200px) {
+  .page .container {
+
+  grid-template-columns: 84px auto 28vw;
+
+}
+  
   .user-card {
     justify-content: center;
     padding: 0px;
 
   }
   .user-card-info {
-    visibility: hidden;
+    display: none;
   }
   .navLinks .navLink {
     align-items: center;
@@ -290,14 +298,35 @@ body {
     display: none;
   }
   .navList .navbar__create_mobile {
-    display: block;
+    display: grid;
+    place-items: center;
     height: 50px;
-    margin: 10px auto 0px;
+    margin: 20px auto 0px;
   }
   .navbar__create_mobile i {
     color: var(--dark-font);
   }
-} */
+}
+
+@media (max-width: 992px) {
+  .page .container {
+
+  grid-template-columns: 0px auto 0px;
+  column-gap: 10px;
+  }
+  
+  .msgs-and-requests {
+    display: none;
+  }
+
+  .open-nav-block {
+    display: block;
+  }
+  .navList {
+    display: none;
+   
+  }
+}
 /* End navList */
 
 /* Start feed */
@@ -362,6 +391,10 @@ body {
   height: 40px;
 }
 
+.post-header__more-actions {
+  align-self: self-start;
+}
+
 .post-pfp {
   width: 30px;
 }
@@ -374,18 +407,11 @@ body {
 
 .post-btn {
   display: block;
-  background-color: var(--color-purple);
+  background-color: var(--primary-color);
   color: var(--dark-font);
   font-size: 16px;
   padding: 10px 25px;
   border-radius: 40px;
-}
-
-@media (max-width: 992px) {
-  .feed {
-    margin: 20px 0px;
-    
-  }
 }
 
 /* Start posts */
@@ -487,7 +513,7 @@ body {
 }
 
 .msgs-types .msgs-type.request {
-  color: var(--color-purple);
+  color: var(--primary-color);
 }
 
 .msgs-types .msgs-type.request::after {
@@ -531,7 +557,7 @@ body {
 }
 
 .requests-contact__actions .accept {
-  background-color: var(--color-purple);
+  background-color: var(--primary-color);
   color: var(--dark-font);
 }
 /* End requests */

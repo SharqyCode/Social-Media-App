@@ -35,8 +35,8 @@
           </div>
         </form>
         <div class="navbar-create-profile d-flex">
-          <button class="navbar__create p-relative">Create</button>
-          <button class="navbar__create_mobile p-relative">
+          <button class="navbar__create create p-relative">Create</button>
+          <button class="navbar__create_mobile create p-relative">
             <i class="fa-solid fa-plus"></i>
           </button>
           <a class="navbar-profile flex-c-c" href="">
@@ -51,7 +51,9 @@
     </nav>
     <div class="page w-full mt-80 mb-20">
       <div class="container p-relative d-flex gap-20">
-        <!-- <i class="open-navList fa-solid fa-bars d-block bg-white p-10 w-fit rad-6 p-fixed"></i> -->
+        <div class="open-nav-block p-sticky">
+          <i class="open-navList fa-solid fa-bars d-block bg-white p-10 w-fit rad-6"></i>
+        </div>
         <aside class="navList p-sticky">
           <i class="close-navList fa-solid fa-x bg-white rad-6 d-block p-absolute"></i>
             <a class="user-card rad-10">
@@ -111,8 +113,8 @@
               </a>
             </li>
           </ul>
-          <button class="navList__create -block w-full mt-20 pt-20 pb-20 rad-50">Create Post</button>
-          <button class="navbar__create_mobile p-relative">
+          <button class="navList__create create d-block w-full mt-20 pt-20 pb-20 rad-50">Create Post</button>
+          <button class="navbar__create_mobile create p-relative">
             <i class="fa-solid fa-plus"></i>
           </button>
         </aside>
@@ -143,7 +145,7 @@
               <img class="stories-card__profile pfp p-absolute" src="./images/Avatars/avatar-04.png" alt="">
             </div>
           </section>
-          <form action="" class="post-form mt-20 d-flex align-center">
+          <form action="" class="post-form mt-20 d-flex align-center" id="create-post">
             <img class="post-pfp pfp" src="./images/profile/team-01.png" alt="">
             <input class="post-input" type="text" placeholder="What's on your mind, Ahmed?">
             <input class="post-btn" type="submit" value="Post">
@@ -321,10 +323,11 @@
                     <button class="rad-50">Decline</button>
                   </div>
               </li>
-            </div>
+            </ul>
           </section>
         </aside>
       </div>
     </div>
+    <script src="./scripts/create-post.js"></script>
   </body>
 </html>
