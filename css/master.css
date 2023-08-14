@@ -168,6 +168,14 @@ body {
   {
     display: none;
   }
+
+  .navbar-form:has(.navbar-form__search:focus) {
+    margin: auto;
+  }
+
+  .navbar-form__search:focus {
+    width: 80vw;
+  }
 }
 /* End Navbar */
 
@@ -421,7 +429,7 @@ body {
   width: 30px;
 }
 
-.post-input {
+#post-input {
   flex-grow: 1;
   padding: 5px;
   margin: 0px 10px;
