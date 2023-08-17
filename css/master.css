@@ -280,29 +280,22 @@ body {
   margin-left: 40px;
 } 
 
-.navLinks .navLink .navLink__icon.bell::after, 
-.navLinks .navLink .navLink__icon.msgs::after {
-  
-  font-size: 8px;
+.notif-count, 
+.msgs-count {
+  font-size: 10px;
   color: var(--secondary-font);
   position: absolute;
   display: grid;
   place-items: center;
   padding: 1px;
-  top: -14px;
+  top: -6px;
   right: -10px;
-  height: 18px;
-  width: 18px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background-color: var(--color-red);
 }
 
-.navLinks .navLink .navLink__icon.bell::after {
-  content: "+99";
-}
-.navLinks .navLink .navLink__icon.msgs::after {
-  content: "2";
-}
 
 .navList__create {
   background-color: var(--primary-color);
@@ -313,6 +306,7 @@ body {
 
 #notif-link {
   position: relative;
+   z-index: 30;
 }
 
 #notif-link::before {
@@ -332,7 +326,7 @@ body {
   background-color: var(--cur-widget);
   border: 4px solid var(--primary-color);
   padding: 15px;
-  z-index: 100;
+  z-index: 30;
 }
 
 #notif-link .notif-list .notif {

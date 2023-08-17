@@ -41,26 +41,26 @@ let navLinks = document.querySelectorAll(".navLink");
 let notifList = document.createElement("ul");
     notifList.classList.add("notif-list");
 
-    for (let i = 0; i < notifications.length; i++)
-    {
-        let notifListItem = document.createElement("li");
+for (let i = 0; i < notifications.length; i++)
+{
+    let notifListItem = document.createElement("li");
         
-        let notif = document.createElement("a");
-        notif.classList.add("notif");
+    let notif = document.createElement("a");
+    notif.classList.add("notif");
+    
+    let notifPfp = document.createElement("img");
+    notifPfp.classList.add("notif__pfp", "pfp", "mr-10");
+    notifPfp.src = notifications[i].img;
         
-        let notifPfp = document.createElement("img");
-        notifPfp.classList.add("notif__pfp", "pfp", "mr-10");
-        notifPfp.src = notifications[i].img;
+    let notifInfo = document.createElement("div");
+    notifInfo.classList.add("notif__info");
         
-        let notifInfo = document.createElement("div");
-        notifInfo.classList.add("notif__info");
+    let notifText = document.createElement("p");
+    notifText.classList.add("notif__text");
         
-        let notifText = document.createElement("p");
-        notifText.classList.add("notif__text");
-        
-        let notifTextUser = document.createElement("span");
-        notifTextUser.classList.add("notif__text_user", "bold");
-        notifTextUser.innerHTML = notifications[i].user;
+    let notifTextUser = document.createElement("span");
+    notifTextUser.classList.add("notif__text_user", "bold");
+    notifTextUser.innerHTML = notifications[i].user;
 
         let area;
         switch(notifications[i].area)
@@ -92,23 +92,27 @@ let notifList = document.createElement("ul");
         notif.appendChild(notifInfo);
         notifListItem.appendChild(notif);
         notifList.appendChild(notifListItem);
-    }
+}
     
-    // notifLink.appendChild(notifList);
 
+let notifCount = document.querySelector(".notif-count");
 notifLink.addEventListener("click", (e)=>{
     e.preventDefault();
     
     if (!notifLink.classList.contains("active"))
     {
         notifLink.appendChild(notifList);
+        navLinks.forEach((link)=>{
+            link.classList.remove("active");
+        })
+        notifLink.classList.add("active");
     }
-
-    navLinks.forEach((link)=>{
-        link.classList.remove("active");
-    })
-    notifLink.classList.add("active");
-
+    else {
+        notifLink.classList.remove("active");
+        notifLink.removeChild(notifList);
+        homeLink.classList.add("active");
+    }
+    notifCount.style.display = "none"
 })
 
 
