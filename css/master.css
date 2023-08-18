@@ -306,7 +306,6 @@ body {
 
 #notif-link {
   position: relative;
-   z-index: 30;
 }
 
 #notif-link::before {
