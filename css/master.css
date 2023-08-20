@@ -219,12 +219,12 @@ body {
 
 .open-nav-block {
     display: none;
-    z-index: 20;
   }
 
 .navList, .open-nav-block {
       height: max-content;
       top: 80px;
+      z-index: 20;
 }
 
 .navList .close-navList {
@@ -272,6 +272,15 @@ body {
   font-weight: bold;
 }
 
+.navLinks li:first-child .navLink.active {
+  border-top-left-radius: 10px;
+}
+
+.navLinks li:last-child .navLink.active {
+  border-bottom-left-radius: 10px;
+}
+
+
 .navLinks .navLink.active .navLink__title {
   color: var(--primary-color);
 }
@@ -279,6 +288,8 @@ body {
   color: var(--primary-color);
   margin-left: 40px;
 } 
+
+
 
 .notif-count, 
 .msgs-count {
@@ -330,7 +341,7 @@ body {
 
 #notif-link .notif-list .notif {
   display: flex;
-  align-items: center;
+  align-items: start;
   margin-bottom: 10px;
 }
 
@@ -390,9 +401,8 @@ body {
 /* End navList */
 
 /* Start feed */
-
 .stories {
-  aspect-ratio: 521 / 180;
+  aspect-ratio: 600 / 180;
   overflow-x: scroll;
   gap: 8px;
 }
@@ -534,6 +544,10 @@ body {
 .post-actions i {
   cursor: pointer;
   transition: 0.3s;
+}
+
+.post-actions i:hover {
+  transform: translateY(-4px);
 }
 
 .post-actions i.like:hover {

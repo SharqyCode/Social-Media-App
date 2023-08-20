@@ -36,7 +36,7 @@ let notifications = [
     }
 ]
 let notifLink = document.querySelector("#notif-link");
-let navLinks = document.querySelectorAll(".navLink");
+// let navLinks = document.querySelectorAll(".navLink");
 
 let notifList = document.createElement("ul");
 notifList.classList.add("notif-list");
@@ -92,39 +92,34 @@ for (let i = 0; i < notifications.length; i++)
         notif.appendChild(notifInfo);
         notifListItem.appendChild(notif);
         notifList.appendChild(notifListItem);
+        // notifLink.appendChild(notifList);
+        // notifList.style.display = "none";
 }
-
 
 let notifCount = document.querySelector(".notif-count");
 notifLink.addEventListener("click", (e)=>{
     e.preventDefault();
-    
-    if (!notifLink.classList.contains("active"))
+
+    if (notifLink.classList.contains("open"))
+    {
+        notifLink.removeChild(notifList);
+        notifLink.classList.remove("open", "active");
+        homeLink.classList.add("active");
+    }
+    else 
     {
         notifLink.appendChild(notifList);
-        navLinks.forEach((link)=>{
-            link.classList.remove("active");
-        })
-        notifLink.classList.add("active");
+        notifLink.classList.add("open");
     }
-    else {
-        hideNotifs();
-    }
-    notifCount.style.display = "none"
+    notifCount.style.display = "none";
 })
 
 
-let homeLink = document.querySelector("#home");
 document.addEventListener("click", (e)=>{
-    if (e.target.id != "notif-link" && notifLink.classList.contains("active"))
+    if (e.target.id != "notif-link")
     {
-        hideNotifs();
+        notifLink.removeChild(notifList);
+        notifLink.classList.remove("open");
     }
 })
 
-
-function hideNotifs() {
-    notifLink.classList.remove("active");
-    notifLink.removeChild(notifList);
-    homeLink.classList.add("active");
-}

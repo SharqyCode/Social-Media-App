@@ -1,0 +1,1 @@
+let themeLink = document.querySelector("#theme-link");
