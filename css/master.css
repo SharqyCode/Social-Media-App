@@ -224,7 +224,7 @@ body {
 .navList, .open-nav-block {
       height: max-content;
       top: 80px;
-      z-index: 20;
+      z-index: 10;
 }
 
 .navList .close-navList {
