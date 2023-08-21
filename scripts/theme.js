@@ -67,6 +67,44 @@ themeLink.addEventListener("click", ()=>{
         document.body.removeChild(cardBg);
     })
     
+    let sizes = document.querySelectorAll(".size-selector__size");
+    sizes.forEach((size)=>{
+        size.addEventListener("click", ()=>{
+            if (!size.classList.contains("active"))
+            {
+                if (size.classList.contains("x-small"))
+                {
+                    root.style.setProperty("font-size",
+                    `12px`);
+                }
+                if (size.classList.contains("small"))
+                {
+                    root.style.setProperty("font-size",
+                    `14px`);
+                }
+                if (size.classList.contains("normal"))
+                {
+                    root.style.setProperty("font-size",
+                    `16px`);
+                }
+                if (size.classList.contains("large"))
+                {
+                    root.style.setProperty("font-size",
+                    `18px`);
+                }
+                if (size.classList.contains("x-large"))
+                {
+                    root.style.setProperty("font-size",
+                    `20px`);
+                }
+                sizes.forEach((size)=>{
+                    size.classList.remove("active");
+                })
+                size.classList.add("active");
+            }
+        })
+    })
+
     let root = document.querySelector(":root");
     let colors = document.querySelectorAll(".color-selector__color");
     colors.forEach((color)=>{
