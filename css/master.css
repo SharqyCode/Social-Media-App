@@ -261,12 +261,20 @@ body {
 
 .navLinks {
   background-color: var(--cur-widget);
+  height: 80%;
 }
 
 .navLinks .navLink {
-  height: 4rem;
+  height: 60px;
   transition: 0.3s;
   color: var(--primary-font);
+}
+
+@media (max-width: 1200px)
+{
+  .navLinks .navLink {
+      height: 45px;
+  }
 }
 
 .navLinks .navLink .navLink__icon {
