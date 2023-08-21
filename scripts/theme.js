@@ -17,11 +17,11 @@ themeCard.innerHTML = `
             <span class="size-selector__small-font">Aa</span>
             <div class="size-selector p-relative d-flex f-g-1">
                 <div class="size-selector__slider p-absolute"></div>
-                <span class="size-selector__size x-small"></span>
-                <span class="size-selector__size small"></span>
-                <span class="size-selector__size normal active"></span>
-                <span class="size-selector__size large"></span>
-                <span class="size-selector__size x-large"></span>
+                <span id="f12" class="size-selector__size x-small"></span>
+                <span id="f14" class="size-selector__size small"></span>
+                <span id="f16" class="size-selector__size normal active"></span>
+                <span id="f18" class="size-selector__size large"></span>
+                <span id="f20" class="size-selector__size x-large"></span>
             </div>
             <span class="size-selector__large-font">Aa</span>
         </div>
@@ -29,25 +29,25 @@ themeCard.innerHTML = `
     <div class="color-type mt-40">
         <h5 class="color-type_title txt-c">Color</h5>
         <div class="color-selector d-flex space-between mt-10">
-            <span class="color-selector__color purple active"></span>
-            <span class="color-selector__color yellow"></span>
-            <span class="color-selector__color red"></span>
-            <span class="color-selector__color green"></span>
-            <span class="color-selector__color blue"></span>
+            <span id="purple" class="color-selector__color purple active"></span>
+            <span id="yellow" class="color-selector__color yellow"></span>
+            <span id="red" class="color-selector__color red"></span>
+            <span id="green" class="color-selector__color green"></span>
+            <span id="blue" class="color-selector__color blue"></span>
         </div>
     </div>
     <div class="background-type mt-40">
         <h5 class="background-type_title txt-c">Background</h5>
         <div class="background-selector d-flex flex-c-c mt-10">
-            <span class="background-selector__background light active">
+            <span id="light" class="background-selector__background light active">
                 <span class="icon mr-20"></span>
                 Light
             </span>
-            <span class="background-selector__background dark">
+            <span id="dark" class="background-selector__background dark">
                 <span class="icon mr-20"></span>
                 Dark
             </span>
-            <span class="background-selector__background black">
+            <span id="black" class="background-selector__background black">
                 <span class="icon mr-20"></span>
                 Black
             </span>
@@ -58,8 +58,76 @@ themeCard.innerHTML = `
 
 cardBg.appendChild(themeCard);
 
+let root = document.querySelector(":root");
+
+// Set theme according to local storage values
+document.addEventListener("DOMContentLoaded", ()=>{
+    if (window.localStorage.getItem("font") != null)
+    {
+        root.style.setProperty("font-size",
+        `${window.localStorage.getItem("font")}px`);
+    }
+
+    if (window.localStorage.getItem("color") != null)
+    {
+        root.style.setProperty("--primary-color",
+        `var(--color-${window.localStorage.getItem("color")})`);
+    }
+
+    if (window.localStorage.getItem("bg") != null)
+        {
+        root.style.setProperty("--cur-bg",
+        `var(--${window.localStorage.getItem("bg")}-bg)`);
+    }
+
+    if (window.localStorage.getItem("widget") != null)
+    {
+        root.style.setProperty("--cur-widget",
+        `var(--${window.localStorage.getItem("widget")}-widget)`);
+    }
+
+    if (window.localStorage.getItem("primaryFont") != null)
+    {
+        root.style.setProperty("--primary-font",
+        `var(--${window.localStorage.getItem("primaryFont")}-font)`);
+    }
+
+    if (window.localStorage.getItem("secondaryFont") != null)
+    {
+        root.style.setProperty("--secondary-font",
+        `var(--${window.localStorage.getItem("secondaryFont")}-font)`);
+    }
+})
+
+
 themeLink.addEventListener("click", ()=>{
     document.body.appendChild(cardBg);
+    let sizes = document.querySelectorAll(".size-selector__size");
+    let colors = document.querySelectorAll(".color-selector__color");
+    let backgrounds = document.querySelectorAll(".background-selector__background");
+    
+    // Set active elements according to local storage values
+    sizes.forEach((size)=>{
+        size.classList.remove("active");
+    })
+    document
+    .querySelector(`#f${window.localStorage.getItem("font")}`)
+    .classList.add("active");
+    
+    colors.forEach((color)=>{
+        color.classList.remove("active");
+    })
+    document
+    .querySelector(`#${window.localStorage.getItem("color")}`)
+    .classList.add("active");
+    
+    backgrounds.forEach((background)=>{
+        background.classList.remove("active");
+    })
+    document
+    .querySelector(`#${window.localStorage.getItem("bg")}`)
+    .classList.add("active");
+    
     themeCard.classList.add("open")
     let closeTheme = document.querySelector(".theme-card__close");
     closeTheme.addEventListener("click", ()=>{
@@ -67,36 +135,37 @@ themeLink.addEventListener("click", ()=>{
         document.body.removeChild(cardBg);
     })
     
-    let sizes = document.querySelectorAll(".size-selector__size");
+    
+    
+
+    let fontSize;
     sizes.forEach((size)=>{
         size.addEventListener("click", ()=>{
             if (!size.classList.contains("active"))
             {
                 if (size.classList.contains("x-small"))
                 {
-                    root.style.setProperty("font-size",
-                    `12px`);
+                    fontSize = 12;
                 }
                 if (size.classList.contains("small"))
                 {
-                    root.style.setProperty("font-size",
-                    `14px`);
-                }
+                    fontSize = 14;}
                 if (size.classList.contains("normal"))
                 {
-                    root.style.setProperty("font-size",
-                    `16px`);
+                    fontSize = 16;
                 }
                 if (size.classList.contains("large"))
                 {
-                    root.style.setProperty("font-size",
-                    `18px`);
+                    fontSize = 18;
                 }
                 if (size.classList.contains("x-large"))
                 {
-                    root.style.setProperty("font-size",
-                    `20px`);
+                    fontSize = 20;
                 }
+                
+                root.style.setProperty("font-size",
+                `${fontSize}px`);
+                window.localStorage.setItem("font", fontSize);
                 sizes.forEach((size)=>{
                     size.classList.remove("active");
                 })
@@ -105,14 +174,15 @@ themeLink.addEventListener("click", ()=>{
         })
     })
 
-    let root = document.querySelector(":root");
-    let colors = document.querySelectorAll(".color-selector__color");
+    let primaryColor;
     colors.forEach((color)=>{
         color.addEventListener("click", ()=>{
             if (!color.classList.contains("active"))
             {
+                primaryColor = color.classList[color.classList.length-1];
+                window.localStorage.setItem("color", primaryColor);
                 root.style.setProperty("--primary-color",
-                `var(--color-${color.classList[color.classList.length-1]})`);
+                `var(--color-${primaryColor})`);
                 colors.forEach((color)=>{
                     color.classList.remove("active");
                 })
@@ -121,28 +191,40 @@ themeLink.addEventListener("click", ()=>{
         })
     })
 
-    let backgrounds = document.querySelectorAll(".background-selector__background");
+    let widgetColor;
+    let bgColor;
+    let primaryFont;
+    let secondaryFont;
     backgrounds.forEach((background)=>{
         background.addEventListener("click", ()=>{
             if (!background.classList.contains("active"))
             {
+                bgColor = background.classList[background.classList.length-1];
                 root.style.setProperty("--cur-bg",
-                `var(--${background.classList[background.classList.length-1]}-bg)`);
+                `var(--${bgColor}-bg)`);
+                window.localStorage.setItem("bg", bgColor);
+
+                widgetColor = background.classList[background.classList.length-1];
                 root.style.setProperty("--cur-widget",
-                `var(--${background.classList[background.classList.length-1]}-widget)`);
+                `var(--${widgetColor}-widget)`);
+                window.localStorage.setItem("widget", widgetColor);
+                
                 if (!background.classList.contains("light")) {
-                    root.style.setProperty("--primary-font",
-                    `var(--dark-font)`);
-                    root.style.setProperty("--secondary-font",
-                    `var(--light-font)`);
+                    primaryFont = "dark";
+                    secondaryFont = "light";
                 }
                 else {
-                    root.style.setProperty("--primary-font",
-                    `var(--light-font)`);
-                    root.style.setProperty("--secondary-font",
-                    `var(--dark-font)`);
+                    primaryFont = "light";
+                    secondaryFont = "dark";
                 }
-               
+
+                root.style.setProperty("--primary-font",
+                `var(--${primaryFont}-font)`);
+                window.localStorage.setItem("primaryFont", primaryFont);
+                root.style.setProperty("--secondary-font",
+                `var(--${secondaryFont}-font)`);
+                window.localStorage.setItem("secondaryFont", secondaryFont);
+
                 backgrounds.forEach((background)=>{
                     background.classList.remove("active");
                 })

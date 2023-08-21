@@ -824,12 +824,6 @@ body {
   background-color: var(--color-blue);
 }
 
-/* --color-purple: hsl( 252 , 75%, 60%);
-  --color-yellow: hsl( 52 , 75%, 60%);
-  --color-red: hsl(0, 95%, 65%);
-  --color-green: hsl(120, 95%, 65%);
-  --color-blue:hsl(202,75%,60%); */
-
 .color-selector__color.active {
   border: .375rem solid white;
 }
