@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 })
 
-
+// Open theme card on click
 themeLink.addEventListener("click", ()=>{
     document.body.appendChild(cardBg);
     let sizes = document.querySelectorAll(".size-selector__size");
@@ -128,6 +128,7 @@ themeLink.addEventListener("click", ()=>{
     .querySelector(`#${window.localStorage.getItem("bg")}`)
     .classList.add("active");
     
+    // Add open class to signify addition/removal of card
     themeCard.classList.add("open")
     let closeTheme = document.querySelector(".theme-card__close");
     closeTheme.addEventListener("click", ()=>{
@@ -135,9 +136,7 @@ themeLink.addEventListener("click", ()=>{
         document.body.removeChild(cardBg);
     })
     
-    
-    
-
+    // Choose font size and add to local storage
     let fontSize;
     sizes.forEach((size)=>{
         size.addEventListener("click", ()=>{
@@ -174,6 +173,7 @@ themeLink.addEventListener("click", ()=>{
         })
     })
 
+    // Choose primary color and add to local storage
     let primaryColor;
     colors.forEach((color)=>{
         color.addEventListener("click", ()=>{
@@ -191,6 +191,8 @@ themeLink.addEventListener("click", ()=>{
         })
     })
 
+
+     // Choose bg, widget, and font colors and add to local storage
     let widgetColor;
     let bgColor;
     let primaryFont;
@@ -234,6 +236,7 @@ themeLink.addEventListener("click", ()=>{
     })
 })
 
+// Close theme card when click outside
 document.addEventListener("click", (e)=>{
     if (e.target.classList.contains("card-bg"))
     {
@@ -243,7 +246,6 @@ document.addEventListener("click", (e)=>{
         homeLink.classList.add("active");
     }
 })
-//TODO: Add responsiveness to theme selector
 
 
 
