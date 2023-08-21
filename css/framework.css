@@ -221,6 +221,9 @@
 .mt-40 {
   margin-top: 40px;
 }
+.mt-60 {
+  margin-top: 60px;
+}
 .mt-80 {
   margin-top: 80px;
 }
@@ -312,7 +315,7 @@
   color: var(--dark-font);
 }
 .c-grey {
-  color: var(--color-gray);
+  color: var(--color-grey);
 }
 .c-red {
   color: var(--color-red);
