@@ -7,7 +7,7 @@ let themeCard = document.createElement("div");
 themeCard.classList.add("theme-card")
 
 themeCard.innerHTML = `
-<i class="fa-solid fa-xmark close"></i>
+<i class="fa-solid fa-xmark theme-card__close"></i>
 <div class="theme-header txt-c">
     <h3 class="theme-header_title ">Customize Your View</h3>
     <p class="theme-header_description c-grey">Manage your font size, color and background</p>
@@ -56,14 +56,16 @@ themeCard.innerHTML = `
 </div>
 `
 
-
-
-
 cardBg.appendChild(themeCard);
-document.body.appendChild(cardBg);
 
-// let themeHeader = document.createElement("div");
+themeLink.addEventListener("click", ()=>{
+    document.body.appendChild(cardBg);
+    let closeTheme = document.querySelector(".theme-card__close");
+    closeTheme.addEventListener("click", ()=>{
+        document.body.removeChild(cardBg);
+    })
+})
 
-// let themeHeaderTitle = document.createElement("h2");
 
-// let themeHeaderSub = document.createElement("p");
+
+
