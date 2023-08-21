@@ -60,8 +60,10 @@ cardBg.appendChild(themeCard);
 
 themeLink.addEventListener("click", ()=>{
     document.body.appendChild(cardBg);
+    themeCard.classList.add("open")
     let closeTheme = document.querySelector(".theme-card__close");
     closeTheme.addEventListener("click", ()=>{
+        themeCard.classList.remove("open")
         document.body.removeChild(cardBg);
     })
     
@@ -115,7 +117,10 @@ themeLink.addEventListener("click", ()=>{
 document.addEventListener("click", (e)=>{
     if (e.target.classList.contains("card-bg"))
     {
+        themeCard.classList.remove("open")
         document.body.removeChild(cardBg);
+        themeLink.classList.remove("active");
+        homeLink.classList.add("active");
     }
 })
 //TODO: Add responsiveness to theme selector

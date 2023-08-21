@@ -12,7 +12,7 @@ navLinks.forEach((link)=>{
 
 let homeLink = document.querySelector("#home");
 document.addEventListener("click", (e)=>{
-    if (!e.target.classList.contains("navLink")) {
+    if (!e.target.classList.contains("navLink") && !themeCard.classList.contains("open")) {
         navLinks.forEach((link)=>{
             link.classList.remove("active");
         })
