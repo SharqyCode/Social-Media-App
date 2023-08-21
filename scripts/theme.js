@@ -64,7 +64,63 @@ themeLink.addEventListener("click", ()=>{
     closeTheme.addEventListener("click", ()=>{
         document.body.removeChild(cardBg);
     })
+    
+    let root = document.querySelector(":root");
+    let colors = document.querySelectorAll(".color-selector__color");
+    colors.forEach((color)=>{
+        color.addEventListener("click", ()=>{
+            if (!color.classList.contains("active"))
+            {
+                root.style.setProperty("--primary-color",
+                `var(--color-${color.classList[color.classList.length-1]})`);
+                colors.forEach((color)=>{
+                    color.classList.remove("active");
+                })
+                color.classList.add("active");
+            }
+        })
+    })
+
+    let backgrounds = document.querySelectorAll(".background-selector__background");
+    backgrounds.forEach((background)=>{
+        background.addEventListener("click", ()=>{
+            if (!background.classList.contains("active"))
+            {
+                root.style.setProperty("--cur-bg",
+                `var(--${background.classList[background.classList.length-1]}-bg)`);
+                root.style.setProperty("--cur-widget",
+                `var(--${background.classList[background.classList.length-1]}-widget)`);
+                if (!background.classList.contains("light")) {
+                    root.style.setProperty("--primary-font",
+                    `var(--dark-font)`);
+                    root.style.setProperty("--secondary-font",
+                    `var(--light-font)`);
+                }
+                else {
+                    root.style.setProperty("--primary-font",
+                    `var(--light-font)`);
+                    root.style.setProperty("--secondary-font",
+                    `var(--dark-font)`);
+                }
+               
+                backgrounds.forEach((background)=>{
+                    background.classList.remove("active");
+                })
+                background.classList.add("active");
+            }
+        })
+    })
 })
+
+document.addEventListener("click", (e)=>{
+    if (e.target.classList.contains("card-bg"))
+    {
+        document.body.removeChild(cardBg);
+    }
+})
+//TODO: Add responsiveness to theme selector
+
+
 
 
 
