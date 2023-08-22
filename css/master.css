@@ -482,27 +482,27 @@ body {
 }
 
 .stories-card:nth-child(1) {
-  background-image: url("/images/stories/story-01.JPG");
+  background-image: url("/images/stories/story-01.jpg");
   background-size: cover;
 }
 .stories-card:nth-child(2) {
-  background-image: url("/images/stories/story-02.JPG");
+  background-image: url("/images/stories/story-02.jpg");
   background-size: cover;
 }
 .stories-card:nth-child(3) {
-  background-image: url("/images/stories/story-03.JPG");
+  background-image: url("/images/stories/story-03.jpg");
   background-size: cover;
 }
 .stories-card:nth-child(4) {
-  background-image: url("/images/stories/story-04.JPG");
+  background-image: url("/images/stories/story-04.jpg");
   background-size: cover;
 }
 .stories-card:nth-child(5) {
-  background-image: url("/images/stories/story-05.JPG");
+  background-image: url("/images/stories/story-05.jpg");
   background-size: cover;
 }
 .stories-card:nth-child(6) {
-  background-image: url("/images/stories/story--6.JPG");
+  background-image: url("/images/stories/story-06.jpg");
   background-size: cover;
 }
 
@@ -676,6 +676,10 @@ body {
 /* End messages */
 
 /* Start requests */
+.msgs-requests {
+  overflow-x: hidden;
+}
+
 .requests-header {
   color: var(--color-grey);
 }
@@ -684,6 +688,24 @@ body {
   background-color: var(--cur-widget);
   padding: .9375rem;
   color: var(--primary-font);
+  animation: 1s ease-in-out forwards;
+}
+
+@keyframes slideOff {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+@keyframes slideUp {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-200%);
+  }
 }
 
 .requests-contact__pfp {
