@@ -508,47 +508,47 @@ body {
 }
 
 .stories-card:nth-child(1) {
-  background-image: url("/images/stories/story-01.JPG");
+  background-image: url("../images/stories/story-01.JPG");
 
 }
 
 .stories-card:nth-child(2) {
-  background-image: url("/images/stories/story-02.JPG");
+  background-image: url("../images/stories/story-02.JPG");
 
 }
 
 .stories-card:nth-child(3) {
-  background-image: url("/images/stories/story-03.JPG");
+  background-image: url("../images/stories/story-03.JPG");
 
 }
 
 .stories-card:nth-child(4) {
-  background-image: url("/images/stories/story-04.JPG");
+  background-image: url("../images/stories/story-04.JPG");
 
 }
 
 .stories-card:nth-child(5) {
-  background-image: url("/images/stories/story-05.JPG");
+  background-image: url("../images/stories/story-05.JPG");
 
 }
 
 .stories-card:nth-child(6) {
-  background-image: url("/images/stories/story-06.JPG");
+  background-image: url("../images/stories/story-06.JPG");
 
 }
 
 .stories-card:nth-child(7) {
-  background-image: url("/images/stories/story-01.JPG");
+  background-image: url("../images/stories/story-01.JPG");
 
 }
 
 .stories-card:nth-child(8) {
-  background-image: url("/images/stories/story-02.JPG");
+  background-image: url("../images/stories/story-02.JPG");
 
 }
 
 .stories-card:nth-child(9) {
-  background-image: url("/images/stories/story-03.JPG");
+  background-image: url("../images/stories/story-03.JPG");
 
 }
 

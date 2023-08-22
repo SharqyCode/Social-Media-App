@@ -5,8 +5,8 @@ storyBG.style.zIndex = "11";
 let storyLarge = document.createElement("div");
 storyLarge.classList.add("storyLarge");
 
-stories.forEach((story)=>{
-    story.addEventListener("click", ()=>{
+stories.forEach((story) => {
+    story.addEventListener("click", () => {
         let storyLarge = document.createElement("div");
         storyLarge.classList.add("storyLarge");
         storyLarge.style.backgroundImage = window.getComputedStyle(story).backgroundImage;
@@ -18,11 +18,14 @@ stories.forEach((story)=>{
         storyBG.append(storyLarge);
         document.body.appendChild(storyBG);
         document.body.style.overflowY = "hidden";
+        setTimeout(() => {
+            document.body.style.overflowY = "scroll";
+            document.body.removeChild(storyBG);
+        }, 15000)
     })
 })
 
-storyBG.addEventListener("click", ()=>{
+storyBG.addEventListener("click", () => {
     document.body.style.overflowY = "scroll";
-    // storyBG.remove(storyLarge);
     document.body.removeChild(storyBG);
 })
