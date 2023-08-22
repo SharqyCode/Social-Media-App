@@ -5,16 +5,17 @@ let closeNavList = document.querySelector(".close-navList");
 
 let pageContainer = document.querySelector(".page .container");
 
-openNavList.addEventListener("click", ()=>{
-    pageContainer.style.gridTemplateColumns = "64px auto 0px";
+
+openNavList.addEventListener("click", () => {
+    pageContainer.style.gridTemplateColumns = "84px auto 0px";
     openNavBlock.style.display = "none";
     navList.style.display = "block";
     closeNavList.style.display = "grid";
 })
 
-closeNavList.addEventListener("click", ()=>{
+closeNavList.addEventListener("click", () => {
+    pageContainer.style.gridTemplateColumns = "0px auto 0px";
     closeNavList.style.display = "none";
     navList.style.display = "none";
     openNavBlock.style.display = "block";
-    pageContainer.style.gridTemplateColumns = "0px auto 0px";
 })
